@@ -36,9 +36,13 @@ namespace Kata
 
         public string Append(int i)
         {
-            var s = _matchers.Where(matcher => matcher.Matches(i)).Aggregate("", (current, matcher) => current + matcher.Contribute());
+            var s = "";
+            foreach (var matcher in _matchers)
+            {
+                s += matcher.Contribute(i);
+            }
 
-            if (_matchers.Count(m=> m.Matches(i)) ==  0)
+            if (s == "")
                 s = i.ToString();
             return s;
         }
@@ -55,20 +59,14 @@ namespace Kata
             _str = str;
         }
 
-        public bool Matches(int i)
+        public string Contribute(int i)
         {
-            return i%_i == 0;
-        }
-
-        public string Contribute()
-        {
-            return _str;
+            return i%_i == 0 ? _str : "";
         }
     }
 
     public interface Matcher
     {
-        bool Matches(int i);
-        string Contribute();
+        string Contribute(int i);
     }
 }
