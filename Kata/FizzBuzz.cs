@@ -8,13 +8,12 @@ namespace Kata
         public string Play()
         {
             var outs = new List<string>();
-            for (int i = 0; i < 100; i++)
+            foreach (var i in Enumerable.Range(1, 100))
             {
-                var v = i + 1;
-                if (v % 3 == 0 && v % 5 == 0)  outs.Add("FizzBuzz");
-                else if (v % 3 == 0)  outs.Add("Fizz");
-                else if (v % 5 == 0)  outs.Add("Buzz");
-                else outs.Add(v.ToString());
+                if (i % 3 == 0 && i % 5 == 0)  outs.Add("FizzBuzz");
+                else if (i % 3 == 0)  outs.Add("Fizz");
+                else if (i % 5 == 0)  outs.Add("Buzz");
+                else outs.Add(i.ToString());
             }
             return outs.Aggregate((i, j) => i + "\r\n" + j);
         }
