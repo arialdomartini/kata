@@ -8,18 +8,17 @@ namespace Kata
     {
         public IEnumerable<char> Play()
         {
-            var numbers = Enumerable.Range(1, 100).ToList().Select(i => i.ToString());
+            var numbers = Enumerable.Range(1, 100).ToList();
             var withFizzesAndBuzzes = numbers.Select(ChangeIfNeeded);
             return String.Join("\r\n", withFizzesAndBuzzes);
         }
 
-        private string ChangeIfNeeded(string s)
+        private string ChangeIfNeeded(int i)
         {
-            var s1 = Int32.Parse(s);
-            if (s1%5 == 0 && s1%3 == 0) return "FizzBuzz";
-            if (s1%3 == 0) return "Fizz";
-            if (s1%5 == 0) return "Buzz";
-            return s;
+            if (i%5 == 0 && i%3 == 0) return "FizzBuzz";
+            if (i%3 == 0) return "Fizz";
+            if (i%5 == 0) return "Buzz";
+            return i.ToString();
         }
     }
 }
