@@ -36,12 +36,7 @@ namespace Kata
 
         public string Append(int i)
         {
-            var s = "";
-            foreach (var matcher in _matchers)
-            {
-                if (matcher.Matches(i))
-                    s += matcher.Contribute();
-            }
+            var s = _matchers.Where(matcher => matcher.Matches(i)).Aggregate("", (current, matcher) => current + matcher.Contribute());
 
             if (_matchers.Count(m=> m.Matches(i)) ==  0)
                 s = i.ToString();
