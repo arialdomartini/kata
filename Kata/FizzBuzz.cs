@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Kata
@@ -8,11 +9,12 @@ namespace Kata
         {
             string s = "";
 
+            var rules = new Dictionary<int, string>() { {15, "FizzBuzz"}, {3, "Fizz"}, {5, "Buzz"} };
+
             foreach (var i in Enumerable.Range(1, 100))
             {
-                if (DivisibilePer(i, 15)) s += "FizzBuzz";
-                else if (DivisibilePer(i, 3)) s += "Fizz";
-                else if (DivisibilePer(i, 5)) s += "Buzz";
+                var firstOrDefault = rules.FirstOrDefault(r => DivisibilePer(i, r.Key));
+                if (firstOrDefault.Value != null) s += firstOrDefault.Value;
                 else s += i;
 
                 if (i!= 100)
