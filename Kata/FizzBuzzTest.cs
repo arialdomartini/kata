@@ -5,6 +5,28 @@ namespace Kata
 {
     public class FizzBuzzTest
     {
+
+        [Theory]
+        [InlineData(1, "1")]
+        [InlineData(2, "2")]
+        [InlineData(3, "Fizz")]
+        [InlineData(4, "4")]
+        [InlineData(5, "Buzz")]
+        [InlineData(6, "Fizz")]
+        [InlineData(7, "7")]
+        [InlineData(8, "8")]
+        [InlineData(9, "Fizz")]
+        [InlineData(15, "FizzBuzz")]
+        public void SingleStep(int i, string expected)
+        {
+            var sut = new FizzBuzz();
+
+            var actual = sut.Append(i);
+
+            Assert.Equal(expected, actual);
+        }
+
+
         [Fact]
         public void Requirement()
         {

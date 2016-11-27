@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 namespace Kata
 {
@@ -7,15 +6,28 @@ namespace Kata
     {
         public string Play()
         {
-            var outs = new List<string>();
-            foreach (var i in Enumerable.Range(1, 100))
+            return Play(100);
+        }
+
+        public string Play(int count)
+        {
+            var s = "";
+            foreach (var i in Enumerable.Range(1, count))
             {
-                if (i % 3 == 0 && i % 5 == 0)  outs.Add("FizzBuzz");
-                else if (i % 3 == 0)  outs.Add("Fizz");
-                else if (i % 5 == 0)  outs.Add("Buzz");
-                else outs.Add(i.ToString());
+                s += Append(i);
+                if (i < 100)
+                    s += "\r\n";
             }
-            return outs.Aggregate((i, j) => i + "\r\n" + j);
+            return s;
+        }
+
+        public string Append(int i)
+        {
+            var s = "";
+            if (i%3 == 0) s += "Fizz";
+            if (i%5 == 0) s += "Buzz";
+            if(i%3 != 0 && i%5 !=0) s += i.ToString();
+            return s;
         }
     }
 }
