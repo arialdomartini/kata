@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FizzBuzz.cs" />
+    <Compile Include="FizzBuzz4.cs" />
     <Compile Include="FizzBuzz3.cs" />
     <Compile Include="FizzBuzz2.cs" />
     <Compile Include="FizzBuzz1.cs" />
