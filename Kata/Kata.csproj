@@ -56,7 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FizzBuzz.cs" />
+    <Compile Include="FizzBuzz2.cs" />
     <Compile Include="FizzBuzz1.cs" />
     <Compile Include="FizzBuzzTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
