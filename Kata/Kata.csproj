@@ -66,6 +66,7 @@
     <Compile Include="FizzBuzz7.cs" />
     <Compile Include="FizzBuzz8.cs" />
     <Compile Include="FizzBuzzTest.cs" />
+    <Compile Include="IntExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
