@@ -63,6 +63,7 @@
     <Compile Include="FizzBuzz2.cs" />
     <Compile Include="FizzBuzz1.cs" />
     <Compile Include="FizzBuzz6.cs" />
+    <Compile Include="FizzBuzz7.cs" />
     <Compile Include="FizzBuzzTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
