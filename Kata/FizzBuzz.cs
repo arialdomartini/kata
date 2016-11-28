@@ -5,38 +5,32 @@ namespace Kata
 {
     public class FizzBuzz
     {
-        private readonly Dictionary<int, string> _rules;
-        private readonly int _upTo;
+        private static Dictionary<int, string> _rules;
 
         public FizzBuzz()
         {
-            _rules = new Dictionary<int, string>() { { 15, "FizzBuzz" }, { 3, "Fizz" }, { 5, "Buzz" } };
-            _upTo = 100;
+            _rules = new Dictionary<int, string> { { 15, "FizzBuzz" }, { 3, "Fizz" }, { 5, "Buzz" } };
         }
 
         public string Play()
         {
-            return JoinWith("\r\n", PlayList(_upTo));
+            var list = Play(100);
+            return string.Join("\r\n", list);
         }
 
-        private string JoinWith(string separator, List<string> list)
+        private static List<string> Play(int count)
         {
-            return string.Join(separator, list);
+            return Enumerable.Range(1, count).Select(TryConvertToFizzBuzz).ToList();
         }
 
-        private List<string> PlayList(int upTo)
+        private static string TryConvertToFizzBuzz(int number)
         {
-            return Enumerable.Range(1, upTo).Select(i => Next(i)).ToList();
+            return _rules.FirstOrDefault(r => CanBeDivided(number, r.Key)).Value ?? number.ToString();
         }
 
-        private string Next(int i)
+        private static bool CanBeDivided(int i, int div)
         {
-            return _rules.FirstOrDefault(r => CanBeDividedBy(i, r.Key)).Value ?? i.ToString();
-        }
-
-        private bool CanBeDividedBy(int i, int n)
-        {
-            return i % n == 0;
+            return i % div == 0;
         }
     }
 }
