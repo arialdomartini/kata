@@ -5,7 +5,7 @@ namespace Kata
 {
     public class FizzBuzz
     {
-        private Dictionary<int, string> _rules;
+        private readonly Dictionary<int, string> _rules;
 
         public FizzBuzz()
         {
@@ -14,16 +14,17 @@ namespace Kata
 
         public string Play()
         {
-            var s = "";
-            const int max = 100;
-            foreach (var i in Enumerable.Range(1, max))
-            {
-                s += Next(i);
+            return Join(Play(100));
+        }
 
-                if (i != max)
-                    s += "\r\n";
-            }
-            return s;
+        private string Join(IEnumerable<string> items)
+        {
+            return string.Join("\r\n", items);
+        }
+
+        private IEnumerable<string> Play(int count)
+        {
+            return Enumerable.Range(1, count).Select(Next);
         }
 
         private string Next(int i)
