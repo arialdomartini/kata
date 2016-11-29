@@ -20,13 +20,15 @@ namespace Kata
         private string Next(int i)
         {
             var rules = new Dictionary<int, string>(){ { 3, "Fizz"}, {5, "Buzz"}};
-            var maatching = rules.Where(w => i % w.Key == 0);
-            if (maatching.Count() == 0)
+            var matching = rules.Where(w => IsMultipleOf(i, w.Key));
+            if (!matching.Any())
                 return i.ToString();
-            else
-            {
-                return string.Join("", maatching.Select(k => k.Value));
-            }
+            return string.Join("", matching.Select(k => k.Value));
+        }
+
+        private static bool IsMultipleOf(int i, int n)
+        {
+            return i % n == 0;
         }
 
         private static string Append(string s, string fizz)
