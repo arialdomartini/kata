@@ -19,11 +19,19 @@ namespace Kata
 
         private string Next(int i)
         {
-            var s = "";
-            if (i % 3 == 0) s = "Fizz";
-            if (i % 5 == 0) s += "Buzz";
-            if (i % 3 != 0 && i % 5 != 0) s += i.ToString();
-            return s;
+            var rules = new Dictionary<int, string>(){ { 3, "Fizz"}, {5, "Buzz"}};
+            var maatching = rules.Where(w => i % w.Key == 0);
+            if (maatching.Count() == 0)
+                return i.ToString();
+            else
+            {
+                return string.Join("", maatching.Select(k => k.Value));
+            }
+        }
+
+        private static string Append(string s, string fizz)
+        {
+            return s + fizz;
         }
     }
 }
