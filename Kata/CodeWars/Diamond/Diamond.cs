@@ -10,8 +10,7 @@ namespace Kata.CodeWars.Diamond
     {
         public static string print(int n)
         {
-            var sequence = GetSequence(n);
-            return string.Join("\n", sequence.Select(i => BuildRow(n, i))) + "\n";
+            return string.Join("", GetSequence(n).Select(i => BuildRow(n, i) + "\n"));
         }
 
         private static string BuildRow(int n, int i)
