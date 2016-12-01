@@ -10,6 +10,7 @@ namespace Kata.CodeWars.Diamond
     {
         public static string print(int n)
         {
+            if (n < 0 || n % 2 == 0) return null;
             return string.Join("", GetSequence(n).Select(i => BuildRow(n, i) + "\n"));
         }
 
@@ -49,6 +50,25 @@ namespace Kata.CodeWars.Diamond
             var actual = Diamond.GetSequence(3);
 
             Assert.Equal(new List<int>{1, 3, 1}, actual);
+        }
+
+        [Fact]
+        public void NullCase()
+        {
+            var actual = Diamond.print(-1);
+
+            Assert.Equal(null, actual);
+        }
+
+        [Theory]
+        [InlineData(2)]
+        [InlineData(4)]
+        [InlineData(6)]
+        public void EvenCase(int n)
+        {
+            var actual = Diamond.print(n);
+
+            Assert.Equal(null, actual);
         }
 
         [Fact]
