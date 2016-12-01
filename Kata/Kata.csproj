@@ -56,6 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeWars\Diamond\Diamond.cs" />
     <Compile Include="FizzBuzz\FizzBuzz.cs" />
     <Compile Include="FizzBuzz\FizzBuzz1.cs" />
     <Compile Include="FizzBuzz\FizzBuzz2.cs" />
