@@ -41,11 +41,19 @@ namespace Kata.CodeWars.Diamond
         }
 
         [Fact]
-        public void GetSequenceTest2()
+        public void GetSequenceTest3()
         {
             var actual = Diamond.GetSequence(3);
 
             Assert.Equal(new List<int>{1, 3, 1}, actual);
+        }
+
+        [Fact]
+        public void GetSequenceTest5()
+        {
+            var actual = Diamond.GetSequence(5);
+
+            Assert.Equal(new List<int>{1, 3, 5, 3, 1}, actual);
         }
 
         [Fact]

@@ -23,7 +23,7 @@ Fizz
 Fizz
 Buzz
 11
-FizzB
+Fizz
 13
 14
 FizzBuzz
