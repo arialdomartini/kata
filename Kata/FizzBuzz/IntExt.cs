@@ -1,4 +1,4 @@
-namespace Kata
+namespace Kata.FizzBuzz
 {
     public static class IntExt
     {

@@ -1,7 +1,6 @@
-using System;
 using Xunit;
 
-namespace Kata
+namespace Kata.FizzBuzz
 {
     public class FizzBuzzTest
     {
@@ -24,7 +23,7 @@ Fizz
 Fizz
 Buzz
 11
-Fizz
+FizzB
 13
 14
 FizzBuzz

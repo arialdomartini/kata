@@ -1,8 +1,9 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
-namespace Kata
+namespace Kata.FizzBuzz
 {
-    public class FizzBuzz2
+    public class FizzBuzz3
     {
         public string Play()
         {
@@ -23,10 +24,16 @@ namespace Kata
 
         public string Append(int i)
         {
-            var s = "";
-            if (i%3 == 0) s += "Fizz";
-            if (i%5 == 0) s += "Buzz";
-            if(i%3 != 0 && i%5 !=0) s += i.ToString();
+            var couples = new Dictionary<int, string>();
+            couples.Add(3, "Fizz");
+            couples.Add(5, "Buzz");
+
+
+            var matches = couples.Where(k => i % k.Key == 0);
+            var s = matches.Aggregate("", (current, match) => current + match.Value);
+
+            if (matches.Count() ==  0)
+                s = i.ToString();
             return s;
         }
     }

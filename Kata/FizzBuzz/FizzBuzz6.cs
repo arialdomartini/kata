@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Kata
+namespace Kata.FizzBuzz
 {
     public class FizzBuzz6
     {

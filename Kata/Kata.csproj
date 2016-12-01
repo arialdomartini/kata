@@ -56,18 +56,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FizzBuzz.cs" />
-    <Compile Include="FizzBuzz9.cs" />
-    <Compile Include="FizzBuzz5.cs" />
-    <Compile Include="FizzBuzz4.cs" />
-    <Compile Include="FizzBuzz3.cs" />
-    <Compile Include="FizzBuzz2.cs" />
-    <Compile Include="FizzBuzz1.cs" />
-    <Compile Include="FizzBuzz6.cs" />
-    <Compile Include="FizzBuzz7.cs" />
-    <Compile Include="FizzBuzz8.cs" />
-    <Compile Include="FizzBuzzTest.cs" />
-    <Compile Include="IntExt.cs" />
+    <Compile Include="FizzBuzz\FizzBuzz.cs" />
+    <Compile Include="FizzBuzz\FizzBuzz1.cs" />
+    <Compile Include="FizzBuzz\FizzBuzz2.cs" />
+    <Compile Include="FizzBuzz\FizzBuzz3.cs" />
+    <Compile Include="FizzBuzz\FizzBuzz4.cs" />
+    <Compile Include="FizzBuzz\FizzBuzz5.cs" />
+    <Compile Include="FizzBuzz\FizzBuzz6.cs" />
+    <Compile Include="FizzBuzz\FizzBuzz7.cs" />
+    <Compile Include="FizzBuzz\FizzBuzz8.cs" />
+    <Compile Include="FizzBuzz\FizzBuzz9.cs" />
+    <Compile Include="FizzBuzz\FizzBuzzTest.cs" />
+    <Compile Include="FizzBuzz\IntExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
