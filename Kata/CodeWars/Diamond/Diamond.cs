@@ -16,8 +16,12 @@ namespace Kata.CodeWars.Diamond
 
         private static string BuildRow(int n, int i)
         {
-            if (n - i == 0) return new String('*', i);
-            return new String(' ', (n - i) /2) + new String('*', i);
+            return Repeat(' ', (n - i) /2) + Repeat('*', i);
+        }
+
+        private static string Repeat(char @char, int times)
+        {
+            return new String(@char, times);
         }
 
         public static List<int> GetSequence(int max)
