@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
 using Xunit;
@@ -9,21 +10,7 @@ namespace Kata.SumList
     {
         public IEnumerable<int> Elaborate(List<int> ints)
         {
-            return Elaborate(ints);
-        }
-
-        public List<int> Elaborate(List<int> ints, int count)
-        {
-            if(!ints.Any()) return new List<int>();
-            var head = ints[0];
-            var tail = ints.Skip(1).ToList();
-
-            if (!tail.Any()) return new List<int>{head};
-            if (ints[0] == ints[1])
-                return Elaborate(tail, count + 1);
-
-            var enumerable = new List<int>{head * count}.Concat(tail).ToList();
-            return Elaborate(enumerable, 1);
+            return (from i in ints group i by i into p select p.Key * p.ToList().Count);
         }
     }
 
