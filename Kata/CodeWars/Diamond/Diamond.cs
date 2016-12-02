@@ -11,8 +11,8 @@ namespace Kata.CodeWars.Diamond
         {
             if (n < 1 || n % 2 == 0) return null;
 
-            return string.Join("\n", Enumerable.Range(1, n)
-                       .Select(i => BuildRow(n, n - Math.Abs(n + 1 - 2 * i)))) + "\n";
+            return string.Join("", Enumerable.Range(1, n)
+                       .Select(i => BuildRow(n, n - Math.Abs(n + 1 - 2 * i)) + "\n"));
         }
 
         private static string BuildRow(int n, int i)
