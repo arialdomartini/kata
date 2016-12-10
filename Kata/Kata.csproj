@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="CodeWars\Diamond\Diamond.cs" />
     <Compile Include="CodeWars\Recursion\Recursion.cs" />
+    <Compile Include="CodeWars\SumOfPositive.cs" />
     <Compile Include="FizzBuzz\FizzBuzz.cs" />
     <Compile Include="FizzBuzz\FizzBuzz1.cs" />
     <Compile Include="FizzBuzz\FizzBuzz2.cs" />
