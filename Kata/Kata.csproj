@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeWars\Diamond\Diamond.cs" />
+    <Compile Include="CodeWars\Recursion\Recursion.cs" />
     <Compile Include="FizzBuzz\FizzBuzz.cs" />
     <Compile Include="FizzBuzz\FizzBuzz1.cs" />
     <Compile Include="FizzBuzz\FizzBuzz2.cs" />
@@ -74,6 +75,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CodeWars\Recursion" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
