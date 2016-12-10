@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿using System.Text.RegularExpressions;
 using Xunit;
 
 namespace Kata
@@ -7,7 +7,7 @@ namespace Kata
     {
         public static string Remove_char(string s)
         {
-            return new string(s.ToArray().Take(s.Length -1).Skip(1).ToArray());
+            return Regex.Replace(s, "^.|.$", "");
         }
     }
 
@@ -19,7 +19,7 @@ namespace Kata
         [InlineData("person", "erso")]
         [InlineData("place", "lac")]
         [InlineData("ok", "")]
-        public void Test1(string given, string expected)
+        public void should_remove_first_and_last_characted_in_a_string(string given, string expected)
         {
             Assert.Equal(expected, RemoveFirstAndLastCharacter.Remove_char(given));
         }
