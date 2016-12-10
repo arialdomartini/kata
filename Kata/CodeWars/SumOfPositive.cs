@@ -7,7 +7,7 @@ namespace Kata.CodeWars
     {
         public static int PositiveSum(int[] arr)
         {
-            return arr.Where(a => a > 0).Aggregate(0, (current, a) => current + a);
+            return arr.Sum(i => i > 0 ? i : 0);
         }
     }
 
