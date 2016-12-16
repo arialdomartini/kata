@@ -61,6 +61,8 @@
     <Compile Include="CodeWars\SumOfPositive.cs" />
     <Compile Include="FizzBuzz\FizzBuzz.cs" />
     <Compile Include="FizzBuzz\FizzBuzz1.cs" />
+    <Compile Include="FizzBuzz\FizzBuzz10.cs" />
+    <Compile Include="FizzBuzz\FizzBuzz11.cs" />
     <Compile Include="FizzBuzz\FizzBuzz2.cs" />
     <Compile Include="FizzBuzz\FizzBuzz3.cs" />
     <Compile Include="FizzBuzz\FizzBuzz4.cs" />
@@ -78,9 +80,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CodeWars\Recursion" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

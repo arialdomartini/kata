@@ -1,13 +1,14 @@
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 
 namespace Kata.FizzBuzz
 {
-    public class FizzBuzz
+    public class FizzBuzz10
     {
         private readonly Dictionary<int, string> _rules;
 
-        public FizzBuzz()
+        public FizzBuzz10()
         {
             _rules = new Dictionary<int, string>()
             {
@@ -33,6 +34,13 @@ namespace Kata.FizzBuzz
                 return i.ToString();
 
             return string.Join("", matching.Select(k => k.Value));
+        }
+    }
+    public static class IntExtensions
+    {
+        private static bool IsMultipleOf(this int i, int n)
+        {
+            return i % n == 0;
         }
     }
 }
