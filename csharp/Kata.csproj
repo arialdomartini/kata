@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeWars\Diamond\Diamond.cs" />
+    <Compile Include="CodeWars\MorseCodeKata\MorseCodeDecoder.cs" />
     <Compile Include="CodeWars\Recursion\Recursion.cs" />
     <Compile Include="CodeWars\SumOfPositive.cs" />
     <Compile Include="FizzBuzz\FizzBuzz.cs" />
@@ -82,6 +83,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CodeWars\MorseCode" />
     <Folder Include="SumList" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
