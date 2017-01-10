@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Kata.Refactoring.ReplaceTypeCodeWithStrategy
 {
@@ -31,31 +33,35 @@ namespace Kata.Refactoring.ReplaceTypeCodeWithStrategy
 
     public abstract class EmployeeType2
     {
+        private static List<EmployeeType2> _employeeTypes;
         public int MonthlySalary { get; set; }
         public int Commission { get; set; }
         public int Bonus { get; set; }
 
         public abstract int Code { get; }
 
+        protected EmployeeType2()
+        {
+            _employeeTypes = new List<EmployeeType2>
+            {
+                new Manager2(),
+                new Engineer2(),
+                new Salesman2()
+            };
+        }
+
         public static EmployeeType2 CreateFromCode(int typeCode)
         {
-            switch (typeCode)
-            {
-                case Employee2.Engineer:
-                    return new Engineer();
-                case Employee2.Salesman:
-                    return new Salesman();
-                case Employee2.Manager:
-                    return new Manager();
-                default:
+            var employeeType = _employeeTypes.FirstOrDefault(e => e.Code == typeCode);
+            if(employeeType == null)
                     throw new Exception("Incorrect Employee Type");
-            }
+            return employeeType;
         }
 
         public abstract int PayAmount();
     }
 
-    public class Manager : EmployeeType2
+    public class Manager2 : EmployeeType2
     {
         public override int Code => Employee2.Manager;
         public override int PayAmount()
@@ -64,7 +70,7 @@ namespace Kata.Refactoring.ReplaceTypeCodeWithStrategy
         }
     }
 
-    public class Salesman : EmployeeType2
+    public class Salesman2 : EmployeeType2
     {
         public override int Code => Employee2.Salesman;
         public override int PayAmount()
@@ -73,7 +79,7 @@ namespace Kata.Refactoring.ReplaceTypeCodeWithStrategy
         }
     }
 
-    public class Engineer : EmployeeType2
+    public class Engineer2 : EmployeeType2
     {
         public override int Code => Employee2.Engineer;
         public override int PayAmount()
